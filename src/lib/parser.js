@@ -1,9 +1,10 @@
-import pdf from 'pdf-parse';
+import * as pdfModule from 'pdf-parse';
+const pdfParse = pdfModule.default ?? pdfModule;
 import mammoth from 'mammoth';
 
 export async function extractText(buffer, mimeType) {
     if (mimeType === 'application/pdf') {
-        const data = await pdf(buffer);
+        const data = await pdfParse(buffer);
         return data.text;
     } else if (mimeType === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
         const data = await mammoth.extractRawText({ buffer });

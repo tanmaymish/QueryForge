@@ -2,9 +2,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Next.js](https://img.shields.io/badge/Framework-Next.js-black?logo=next.js)](https://nextjs.org/)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/your-repo/personal-knowledge-search)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/tanmaymish/QueryForge)
 
-Aura Search is a full-stack, AI-powered personal knowledge management system. It allows you to index your personal PDF, DOCX, and Text documents and search across them using natural language.
+An AI-powered personal knowledge search engine that indexes documents and multimedia files to enable fast semantic search across local data. Built with a unified Next.js architecture using Node.js serverless functions and vector embeddings to deliver intelligent search, metadata filtering, and real-time indexing.
 
 ## ✨ Features
 

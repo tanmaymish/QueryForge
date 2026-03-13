@@ -14,6 +14,13 @@ export async function POST(request) {
         }
 
         const client = await clientPromise;
+        if (!client) {
+            return NextResponse.json(
+                { message: 'Demo Mode: User registration simulated' },
+                { status: 201 }
+            );
+        }
+
         const db = client.db(process.env.MONGODB_DB || 'aura_search');
         const users = db.collection('users');
 

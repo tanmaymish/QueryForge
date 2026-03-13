@@ -27,6 +27,27 @@ export async function GET(request) {
 
         // 4. Query Pinecone
         const index = getIndex();
+
+        if (!index) {
+            console.warn('Search: Running in Demo Mode (No Pinecone)');
+            // Return Mock Results for Showcase
+            const mockResults = [
+                {
+                    score: 0.95,
+                    id: 'demo_1',
+                    fileName: 'Project_Overview.pdf',
+                    text: `Aura Search is a state-of-the-art personal knowledge engine designed for the ${query} context.`
+                },
+                {
+                    score: 0.82,
+                    id: 'demo_2',
+                    fileName: 'Research_Notes.docx',
+                    text: `Key findings regarding ${query} suggest that semantic search significantly improves user retrieval speed.`
+                }
+            ];
+            return NextResponse.json({ results: mockResults });
+        }
+
         const queryResponse = await index.query({
             vector: queryVector,
             topK: 10,

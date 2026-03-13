@@ -13,6 +13,28 @@ export async function GET() {
         }
 
         const client = await clientPromise;
+        if (!client) {
+            console.warn('Files: Running in Demo Mode (No MongoDB)');
+            return NextResponse.json({
+                documents: [
+                    {
+                        fileName: 'Sample_Knowledge_Base.pdf',
+                        mimeType: 'application/pdf',
+                        size: 1024 * 45,
+                        status: 'completed',
+                        indexedAt: new Date(Date.now() - 86400000).toISOString()
+                    },
+                    {
+                        fileName: 'Aura_Guide.docx',
+                        mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+                        size: 1024 * 12,
+                        status: 'completed',
+                        indexedAt: new Date(Date.now() - 172800000).toISOString()
+                    }
+                ]
+            });
+        }
+
         const db = client.db(process.env.MONGODB_DB || 'aura_search');
         const documents = await db.collection('documents')
             .find({ userId: user.userId })

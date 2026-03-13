@@ -36,7 +36,7 @@ export default function UploadPage() {
             }
         } catch (err) {
             setStatus('error');
-            setMessage('An error occurred during indexing.');
+            setMessage(err.message || 'An error occurred during indexing.');
         }
     };
 

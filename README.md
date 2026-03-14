@@ -15,6 +15,38 @@ An AI-powered personal knowledge search engine that indexes documents and multim
 - **Glassmorphic UI**: High-end modern design system.
 - **Privacy First**: Secure JWT authentication and private vector storage.
 
+## 🏗️ System Architecture
+
+```mermaid
+graph TD
+    %% Styling
+    classDef client fill:#6366f1,stroke:#333,stroke-width:2px,color:#fff;
+    classDef api fill:#a855f7,stroke:#333,stroke-width:2px,color:#fff;
+    classDef db fill:#10b981,stroke:#333,stroke-width:2px,color:#fff;
+    classDef ai fill:#f43f5e,stroke:#333,stroke-width:2px,color:#fff;
+
+    %% Nodes
+    A[Next.js Frontend UI]:::client
+    B[Upload API Route]:::api
+    C[Search API Route]:::api
+    D[Document Parser]:::api
+    E[Embedding Model]:::ai
+    F[(MongoDB Atlas Metadata)]:::db
+    G[(Pinecone DB Vectors)]:::db
+
+    %% Connections
+    A -->|1. Upload File| B
+    B -->|2. Extract Text| D
+    D -->|3. Save Metadata| F
+    D -->|4. Chunk Text| E
+    E -->|5. Store Embeddings| G
+
+    A -->|A. Search Query| C
+    C -->|B. Embed Query| E
+    C -->|C. Similarity Search| G
+    G -->|D. Return Best Matches| A
+```
+
 ## 🛠️ Tech Stack
 
 - **Frontend/Backend**: Next.js 15+ (App Router, Serverless Functions)

@@ -4,7 +4,7 @@
 [![Next.js](https://img.shields.io/badge/Framework-Next.js-black?logo=next.js)](https://nextjs.org/)
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/tanmaymish/QueryForge)
 
-**🌐 Live Demo:** [https://candid-pony-bc2c51.netlify.app](https://candid-pony-bc2c51.netlify.app)
+**🌐 Live Demo:** [https://kaleidoscopic-kringle-c28ec8.netlify.app](https://kaleidoscopic-kringle-c28ec8.netlify.app)
 
 An AI-powered personal knowledge search engine that indexes documents and multimedia files to enable fast semantic search across local data. Built with a unified Next.js architecture using Node.js serverless functions and vector embeddings to deliver intelligent search, metadata filtering, and real-time indexing.
 
